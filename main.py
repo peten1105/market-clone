@@ -56,6 +56,7 @@ async def get_items():
     return JSONResponse( jsonable_encoder(dict(row) for row in rows) )
 
 
+
 @app.get('/images/{item_id}')
 async def get_image(item_id):
     image_bytes = cur.execute(f"""
@@ -64,8 +65,17 @@ async def get_image(item_id):
     return Response(content=bytes.fromhex(image_bytes), media_type='image/*')
 
 @app.post('/signup')
-def signup(id:Annotated[str,Form()], password:Annotated[str,Form()]):
+def signup(id:Annotated[str,Form()], 
+           password:Annotated[str,Form()],
+           name:Annotated[str,Form()],
+           email:Annotated[str,Form()]):
     print(id, password)
+    
+    cur.execute(f"""
+                INSERT INTO users(id, name, email, password) 
+                VALUES ('{id}', '{name}', '{email}', '{password}')
+                """)
+    con.commit()
     return '200'
 
 
