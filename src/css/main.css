@@ -41,7 +41,7 @@ main {
 
 .item-list__info-meta {
   font-size: smaller;
-  color: rgba(0,0,0,0.3);s
+  color: rgba(0, 0, 0, 0.3);
 }
 .item-list__info-price {
   font-weight: bold;
@@ -54,9 +54,9 @@ main {
   border-radius: 25px;
   font-size: 15px;
   position: fixed;
-  bottom:120px;
+  bottom: 120px;
   right: 20px;
-  box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
