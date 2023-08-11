@@ -3,7 +3,7 @@
   import { getDatabase, ref, push } from "firebase/database";
   import { getStorage, ref as refImage, uploadBytes, getDownloadURL } from "firebase/storage";
 
-  import Footer from "../components/Footer.svelte";
+  import Nav from "../components/Nav.svelte";
 
   let title;
   let price;
@@ -70,7 +70,7 @@ const handleSubmit = async ()  => {
   </div>
 </form>
 
-<Footer location='write'/>
+<Nav location='write'/>
 
 <style>
   .write-button {
